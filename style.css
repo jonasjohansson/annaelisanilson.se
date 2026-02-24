@@ -64,6 +64,16 @@ a:hover {
 	padding: 20px;
 }
 
+#work section {
+	margin-bottom: 2em;
+}
+
+#work h2 {
+	font-size: 1em;
+	font-weight: 700;
+	margin-bottom: 0.5em;
+}
+
 #work section > div {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -140,5 +150,9 @@ a:hover {
 
 	#work section > div {
 		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	}
+
+	#work section {
+		margin-bottom: 1.5em;
 	}
 }

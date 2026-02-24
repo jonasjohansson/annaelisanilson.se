@@ -30,7 +30,13 @@ document.querySelectorAll("#work figure img").forEach(function (img) {
 
 	if (title) {
 		var caption = document.createElement("figcaption");
-		caption.textContent = title;
+		var filename = decodeURIComponent(img.src.split("/").pop());
+		var yearMatch = filename.match(/^(\d{4}(?:-\d{4})?)/);
+		var sizeMatch = filename.match(/(\d+x\d+)\s*-?cm/i);
+		var meta = [];
+		if (yearMatch) meta.push(yearMatch[1]);
+		if (sizeMatch) meta.push(sizeMatch[1] + " cm");
+		caption.textContent = title + (meta.length ? " (" + meta.join(", ") + ")" : "");
 		a.parentNode.appendChild(caption);
 	}
 });
